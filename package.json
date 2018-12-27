@@ -1,0 +1,9 @@
+{
+  "name": "nitimis.css",
+  "version": "0.0.1",
+  "description": "Nitmis CSS stylesheets",
+  "main": "index.js",
+  "repository": "https://github.com/nitimis/nitimis.css",
+  "author": "nitimis",
+  "license": "MIT"
+}
