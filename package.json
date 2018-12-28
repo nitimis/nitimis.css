@@ -7,7 +7,7 @@
     "email": "nitimis@pm.me",
     "url": "http://nitimis.com"
   },
-  "description": "Nitmis CSS stylesheets",
+  "description": "Nitmis CSS - Yet another flexbox-based grid and components (Mostly stolen from others)",
   "main": "nitimis.sass",
   "unpkg": "css/nitimis.css",
   "style": "nitimis/css/nititmis.min.css",
@@ -51,6 +51,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
+    "bulma": "^0.7.2",
     "minireset.css": "^0.0.3"
   }
 }
