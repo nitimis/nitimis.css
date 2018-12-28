@@ -1,9 +1,56 @@
 {
   "name": "nitimis.css",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "homepage": "https://nitimis.com",
+  "author": {
+    "name": "Nitimis",
+    "email": "nitimis@pm.me",
+    "url": "http://nitimis.com"
+  },
   "description": "Nitmis CSS stylesheets",
-  "main": "index.js",
-  "repository": "https://github.com/nitimis/nitimis.css",
-  "author": "nitimis",
-  "license": "MIT"
+  "main": "nitimis.sass",
+  "unpkg": "css/nitimis.css",
+  "style": "nitimis/css/nititmis.min.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitimis/nitimis.css.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "nitimis",
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "bugs": {
+    "url": "https://github.com/nitimis/nitimis.css/issues"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/nitimis.css css/nitimis.css",
+    "build-cleancss": "cleancss -o css/nitimis.min.css css/nitimis.css",
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style expanded --source-map true nitimis.sass css/nitimis.css",
+    "deploy": "npm run build",
+    "start": "npm run build-sass -- --watch"
+  },
+  "files": [
+    "css",
+    "sass",
+    "nitimis.sass",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.4.3",
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "minireset.css": "^0.0.3"
+  }
 }
