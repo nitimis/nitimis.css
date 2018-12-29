@@ -6,7 +6,7 @@
 		"../sass/utilities/_all.sass",
 		"../sass/utilities/initial-variables.sass",
 		"../node_modules/bulma/sass/utilities/functions.sass",
-		"../derived-variables.sass",
+		"../sass/utilities/derived-variables.sass",
 		"../node_modules/bulma/sass/utilities/animations.sass",
 		"../sass/utilities/mixins.sass",
 		"../node_modules/bulma/sass/utilities/controls.sass",
