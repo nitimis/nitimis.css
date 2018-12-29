@@ -1,0 +1,138 @@
+$column-gap: 0.75rem !default
+$number-of-cols: 4
+
+.column
+  display: block
+  flex-basis: 0
+  flex-grow: 1
+  flex-shrink: 1
+  padding: $column-gap
+  .columns.is-mobile > &.is-narrow
+    flex: none
+  .columns.is-mobile > &.is-full
+    flex: none
+    width: 100%
+  .columns.is-mobile > &.is-half
+    flex: none
+    width: 50%
+  .columns.is-mobile > &.is-one-quarter
+    flex: none
+    width: 25%
+  .columns.is-mobile > &.is-one-fifth
+    flex: none
+    width: 20%
+  .columns.is-mobile > &.is-offset-half
+    margin-left: 50%
+  @for $i from 1 through $number-of-cols
+    .columns.is-mobile > &.is-#{$i}
+      flex: none
+      width: percentage($i / $number-of-cols)
+    .columns.is-mobile > &.is-offset-#{$i}
+      margin-left: percentage($i / $number-of-cols)
+  +mobile
+    &.is-narrow-mobile
+      flex: none
+    &.is-full-mobile
+      flex: none
+      width: 100%
+    &.is-half-mobile
+      flex: none
+      width: 50%
+    &.is-one-quarter-mobile
+      flex: none
+      width: 25%
+    &.is-one-fifth-mobile
+      flex: none
+      width: 20%
+    &.is-offset-half-mobile
+      margin-left: 50%
+    @for $i from 1 through $number-of-cols
+      &.is-#{$i}-mobile
+        flex: none
+        width: percentage($i / $number-of-cols)
+      &.is-offset-#{$i}-mobile
+        margin-left: percentage($i / $number-of-cols)
+  +tablet
+    &.is-narrow,
+    &.is-narrow-tablet
+      flex: none
+    &.is-full,
+    &.is-full-tablet
+      flex: none
+      width: 100%
+    &.is-half,
+    &.is-half-tablet
+      flex: none
+      width: 50%
+    &.is-one-quarter,
+    &.is-one-quarter-tablet
+      flex: none
+      width: 25%
+    &.is-offset-half,
+    &.is-offset-half-tablet
+      margin-left: 50%
+    @for $i from 1 through $number-of-cols
+      &.is-#{$i},
+      &.is-#{$i}-tablet
+        flex: none
+        width: percentage($i / $number-of-cols)
+      &.is-offset-#{$i},
+      &.is-offset-#{$i}-tablet
+        margin-left: percentage($i / $number-of-cols)
+  +desktop
+    &.is-narrow-desktop
+      flex: none
+    &.is-full-desktop
+      flex: none
+      width: 100%
+    &.is-half-desktop
+      flex: none
+      width: 50%
+    &.is-one-quarter-desktop
+      flex: none
+      width: 25%
+    &.is-offset-half-desktop
+      margin-left: 50%
+    @for $i from 1 through $number-of-cols
+      &.is-#{$i}-desktop
+        flex: none
+        width: percentage($i / $number-of-cols)
+      &.is-offset-#{$i}-desktop
+        margin-left: percentage($i / $number-of-cols)
+
+.columns
+  margin-left: (-$column-gap)
+  margin-right: (-$column-gap)
+  margin-top: (-$column-gap)
+  &:last-child
+    margin-bottom: (-$column-gap)
+  &:not(:last-child)
+    margin-bottom: calc(1.5rem - #{$column-gap})
+  // Modifiers
+  &.is-centered
+    justify-content: center
+  &.is-gapless
+    margin-left: 0
+    margin-right: 0
+    margin-top: 0
+    & > .column
+      margin: 0
+      padding: 0 !important
+    &:not(:last-child)
+      margin-bottom: 1.5rem
+    &:last-child
+      margin-bottom: 0
+  &.is-mobile
+    display: flex
+  &.is-multiline
+    flex-wrap: wrap
+  &.is-vcentered
+    align-items: center
+  // Responsiveness
+  +tablet
+    &:not(.is-desktop)
+      display: flex
+  +desktop
+    // Modifiers
+    &.is-desktop
+      display: flex
